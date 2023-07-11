@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block title %}Car Spec Finder{% endblock %}
+{% block content %}
+<div class="img-holder">
+    <img src="redsupercar.webp" class="car-image"/>
+</div>
+
+<div class="menu-wrap">
+    <input type="text" placeholder="Specs?">
+    <select class="dropdown-menu">
+        <option class="make-search">Make</option>
+        <option class="year-search">Year</option>
+        <option class="model-search">Model</option>
+    </select>
+</div>
+{% endblock %}
