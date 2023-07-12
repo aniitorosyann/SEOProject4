@@ -1,0 +1,35 @@
+*{
+    color: #FFF;
+}
+
+.paragraphs{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.home-title{
+    font-size: 50px;
+    margin: 50px;
+    text-align: center;
+}
+
+.paragraph-title{
+    color:#00171F;
+}
+
+.left-paragraph{
+    margin: 0 auto;
+    width: auto;
+    height: fit-content;
+    text-align: left;
+    
+}
+
+.right-paragraph{
+    text-align: right;
+    margin: 0 auto;
+    width: auto;
+    height: fit-content;
+}
+
