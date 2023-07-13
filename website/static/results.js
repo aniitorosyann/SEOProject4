@@ -6,6 +6,7 @@
         fetch('/api/data')
             .then(response => response.json())
             .then(data => {
+                console.log("DATA: " + data);
                 let filteredData = data.filter(car => car[searchCategory].toLowerCase().includes(searchTerm.toLowerCase()));
 
                 let htmlString = '';
