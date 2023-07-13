@@ -27,12 +27,11 @@ class Project:
             self.data_frame = pd.concat([self.data_frame,dataFrameTemp], ignore_index=True)
         self.data_frame.to_sql('car_list', con=self.engine, if_exists='replace', index=False)
 
-    def dataList(self):
+    def dataList(self, searchCategory, searchTerm):
         with self.engine.connect() as connection:
-            query_result = connection.execute(db.text("SELECT * FROM car_list LIMIT 10;")).fetchall()
+            query_result = connection.execute(db.text(f"SELECT * FROM car_list WHERE {searchCategory}={searchTerm};")).fetchall()
             df = pd.DataFrame(query_result)
             data = df.values.tolist() #here is the one that returns a list of lists
-            #data = df.to_dict('index') #inside of here you can put whatever you want to as the key for the dictionary, in this case its the index but it could be 'model' or 'year' for example
             return data
 
     def get_data_frame(self):
@@ -40,7 +39,7 @@ class Project:
 
 #test = Project("6ae4620f9emsh54de9661868b4f9p13701cjsn18705c66c419")
 #test.populate_DB()
-#print(test.dataList())
+#print(test.dataList(1,2007))
   
    
 
