@@ -1,15 +1,17 @@
-from flask import Blueprint, render_template
+from flask import Flask
 
-auth = Blueprint('auth', __name__)
+DB_NAME = "database.db"
 
-@auth.route('/login')
-def login():
-    return render_template("login.html")
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'our secret key'
 
-@auth.route('/logout')
-def logout():
-    return "<p>Logout</p>"
+    from .views import views
+    from .auth import auth
+    from .data import data
 
-@auth.route('/sign-up')
-def sign_up():
-    return render_template("sign_up.html")
+    app.register_blueprint(views, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(data, url_prefix='/api')
+
+    return app
