@@ -29,7 +29,11 @@ class Project:
 
     def dataList(self, searchCategory, searchTerm):
         with self.engine.connect() as connection:
-            query_result = connection.execute(db.text(f"SELECT * FROM car_list WHERE {searchCategory}={searchTerm};")).fetchall()
+            print(searchCategory)
+            if searchCategory == 'car-type':
+                searchCategory = 'type'
+
+            query_result = connection.execute(db.text(f"SELECT * FROM car_list WHERE {searchCategory}='{searchTerm}';")).fetchall()
             df = pd.DataFrame(query_result)
             data = df.values.tolist() #here is the one that returns a list of lists
             return data
