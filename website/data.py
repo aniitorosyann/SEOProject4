@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify
-import requests, json
+from flask import Blueprint, jsonify, request
+import json
 import pandas as pd
 import sqlalchemy as db
 import time
@@ -22,5 +22,7 @@ def populate_db():
 
 @data.route('/data', methods=['GET'])
 def get_data():
-    data = project.dataList()
+    category = request.args.get('category')
+    value = request.args.get('value')
+    data = project.dataList(category, value)
     return jsonify(data)
