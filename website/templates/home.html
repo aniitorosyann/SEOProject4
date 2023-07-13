@@ -1,15 +1,43 @@
 {% extends "layout.html" %} {% block title %}Car Spec Finder{% endblock %}
 {% block content %}
-<div class="img-holder">
-    <img src="redsupercar.webp" class="car-image"/>
-</div>
+<link rel="stylesheet" href="../static/home-styles.css">
+<div class="home-background">
+    <h1 class="home-title">Welcome to Car Spec Finder</h1>
+    
 
-<div class="menu-wrap">
-    <input type="text" placeholder="Specs?">
-    <select class="dropdown-menu">
-        <option class="make-search">Make</option>
-        <option class="year-search">Year</option>
-        <option class="model-search">Model</option>
-    </select>
+    <div class="paragraphs">
+        <div class="left-paragraph">
+            <h2 class="leftie paragraph-title">Find the cars you love.</h2>
+
+            <p>Search by the following:</p>
+            <ul class="factors-list">
+                <li>Year</li>
+                <li>Model</li>
+                <li>Make</li>
+                <li>Type</li>
+            </ul>
+        </div>
+
+        <div class="right-paragraph">
+            <h2 class="rightie paragraph-title">Explore your options.</h2>
+            <p>
+                Our website has access to a variety of<br>
+                cars so that anyone can find something<br>
+                that suits their needs.
+            </p>
+        </div>
+    </div>
+        <div class="search-box">
+            <select id="search-category">
+              <option value="car-type">Car Type</option>
+              <option value="make">Make</option>
+              <option value="model">Model</option>
+              <option value="year">Year</option>
+            </select>
+            <input type="text" id="search-term" placeholder="Enter search term...">
+            <button type="submit">Search</button>
+        </div>
+        <div id="search-results"></div>  
+        <script src="results.js"></script>
 </div>
 {% endblock %}
