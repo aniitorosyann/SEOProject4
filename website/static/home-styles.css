@@ -2,17 +2,20 @@
     color: #FFF;
 }
 
+
 .paragraphs{
     display: flex;
     justify-content: space-between;
     
 }
 
-.home-title{
+.home-title {
     font-size: 50px;
     margin: 50px;
     text-align: center;
 }
+body {
+    background-color: #0094ff;}
 
 .paragraph-title{
     color:#00171F;
