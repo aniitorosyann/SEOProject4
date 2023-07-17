@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+        <!--setup layout interaction --> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <!--Bootstrap CSS for style --> 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link
         rel="stylesheet"
@@ -17,11 +20,14 @@
         crossorigin="anonymous"
         />
 
+        <!--default title of webpage --> 
         <title>{% block title %}Home{% endblock %}</title>
     </head>
 
     <body>
+        <!--navigation bar setup --> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            #toggling space for smaller screens/phones
             <button 
                 class="navbar-toggler" 
                 type="button" 
@@ -30,6 +36,7 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!--navigation links --> 
             <div class="collapse navbar-collapse" id="navbar">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" id="login" href="/login">Login</a>
@@ -39,11 +46,13 @@
                 </div>
             </div>    
         </nav>    
+        <!--main content area from working w Django--> 
         <div class="container">
         {% block content %}
         {% endblock %}
         </div>
 
+        <!--random javascript files --> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
