@@ -1,7 +1,10 @@
+<!--links to use the base file/template --> 
 {% extends "layout.html" %} {% block title %}Login{% endblock %}
 {% block content %}
+<!--creating a form --> 
 <form method="POST">
     <h3 align="center">Login</h3>
+    <!--email section --> 
     <div class="form-group">
         <label for="email">Email Address</label>
         <input 
@@ -12,6 +15,7 @@
             placeholder="Enter email"
         />
     </div>    
+    <!--password section --> 
     <div class="form-group">
         <label for="password">Password</label>
         <input 
@@ -23,6 +27,7 @@
         />
     </div>  
     <br />
+    <!--Login button --> 
     <button type="submit" class=""btn btn-primary">Login</button>
 </form>
 {% endblock %}
