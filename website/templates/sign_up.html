@@ -1,7 +1,10 @@
+<!-- links to use the base file/template --> 
 {% extends "layout.html" %} {% block title %}Sign Up{% endblock %}
 {% block content %}
+<!-- creating the form --> 
 <form method="POST">
     <h3 align="center">Sign Up</h3>
+    <!-- email section --> 
     <div class="form-group">
         <label for="email">Email Address</label>
         <input 
@@ -12,6 +15,7 @@
             placeholder="Enter email"
         />
     </div>    
+    <!-- first name section --> 
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input 
@@ -22,6 +26,7 @@
             placeholder="Enter first name"
         />
     </div>  
+    <!-- password section --> 
     <div class="form-group">
         <label for="password1">Password</label>
         <input 
@@ -32,6 +37,7 @@
             placeholder="Enter password"
         />
     </div>  
+    <!-- password confirmation section --> 
     <div class="form-group">
         <label for="password2">Password(Confirm)</label>
         <input 
@@ -43,6 +49,7 @@
         />
     </div>  
     <br />
+    <!-- submit button --> 
     <button type="submit" class=""btn btn-primary">Submit</button>
 </form>
 {% endblock %}
